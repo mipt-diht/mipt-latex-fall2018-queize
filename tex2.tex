@@ -5,12 +5,13 @@
 \usepackage{amsthm}
 \usepackage{gensymb}
 \usepackage{amssymb}
-
+\usepackage{dsfont}
+\DeclareMathOperator{\mat}{Mat}
 \usepackage[russian]{babel}
 \usepackage[
 left	= 1cm,
 right	= 1cm,
-top	= 1cm,
+top		= 1cm,
 bottom	= 2cm
 ]{geometry}
 \newcounter{abc}
@@ -18,23 +19,23 @@ bottom	= 2cm
 \newtheorem{theorem}{Теорема}[section]
 \theoremstyle{definition}\newtheorem{definition}{Определение}
 \newcounter{Number}[section]
-\newenvironment{tasks}[1]{\stepcounter{Number} \underline{\textbf{Задача №\arabic{Number}. #1 }} \\[8pt]}{\\}
+\newenvironment{tasks}[1]{\stepcounter{Number} \underline{\textbf{Задача №\arabic{Number}. #1 }} \\[8pt]}{\\[8pt]}
 
 
 \begin{document}
 
-\section{Центральная пределельая теорема}
+\section{Центральная предельная теорема}
 	\begin{theorem}[Линдеберга]
-	 Пусть $\{\xi_k\}_{k \geqslant 1}$~--- независимые случайные величины, $E\xi_k^2 <+ \infty,~\forall k$, обозначим $m_k=E\xi_k,~\delta_k^2=D\xi_k;~S_n=\sum\limits_{i=1}^{n}S_i;~D_n^2 = \sum\limits_{k=0}^{n}\delta_k^2$ и $F(x)$~--- функция распределения $\xi_k$. Пусть выполнено условие Линдербега, т.е.
-	 $$\forall\xi>0,\frac{1}{D_n^2}\sum\limits_{k=1}^{n}~ \int\limits_{\{x:\mid x-m_k\mid >\varepsilon D_n\}} (x-m_k)^2\,dF(x) \xrightarrow[n \rightarrow \infty]{} 0 $$
-	 Тогда  $$ \frac{S_n-ES_n}{\sqrt{DS_n}}\overset{\text{d}}{\longrightarrow} \mathcal{N} (0,1),~n \rightarrow \infty.$$
+	 Пусть $\{\xi_k\}_{k \geqslant 1}$~--- независимые случайные величины, $\mathsf{E} \xi_k^2 <+ \infty,~\forall k$, обозначим $m_k=\mathsf{E} \xi_k,~\delta_k^2=\mathsf{D} \xi_k;~S_n=\sum\limits_{i=1}^{n}S_i;~\mathsf{D}_n^2 = \sum\limits_{k=0}^{n}\delta_k^2$ и $F(x)$~--- функция распределения $\xi_k$. Пусть выполнено условие Линдербега, т.е.
+	 $$\forall\xi>0,\frac{1}{\mathsf{D}^2}\sum\limits_{k=1}^{n}~ \int\limits_{\{x:\mid x-m_k\mid >\varepsilon \mathsf{D}_n\}} (x-m_k)^2\,dF(x) \xrightarrow[n \rightarrow \infty]{} 0 $$
+	 Тогда  $$ \frac{S_n-\mathsf{E}S_n}{\sqrt{\mathsf{D}S_n}}\overset{\text{d}}{\longrightarrow} \mathcal{N} (0,1),~n \rightarrow \infty.$$
 	\end{theorem}
 	\section{Гауссовский случайный вектор}
 	\begin{definition}
-Слаучайный вектор $\vec{\xi} \sim \mathcal{N}(m,\sum)$~--- гауссовский, если его характеристическая функция $\varphi_\xi(\vec{t})=e^{i(\vec{m},\vec{t}) -\frac{1}{2}(\sum\vec{t},\vec{t})},~\vec{m} \in \mathcal{R}^n,~\sum$~--- симметрическая, неотрицательно-определенная матрица.
+Слаучайный вектор $\vec{\xi}\sim \mathcal{N}(m,\sum)$~--- гауссовский, если его характеристическая функция $\varphi_\xi(\vec{t})=e^{i(\vec{m},\vec{t}) -\frac{1}{2}(\sum\vec{t},\vec{t})},~\vec{m} \in \mathcal{R}^n,~\sum$~--- симметрическая, неотрицательно-определенная матрица.
 	\end{definition}
 	\begin{definition}
-Случайный вектор $\vec{\xi}$~--- гауссовский, если он представляется в следующем виде: $\vec{\xi} = A\vec{\eta} + \vec{B}$, где $\vec{B} \in \mathbb{R}^n,A \in Mat(n \times m)$ и $\vec{\eta} = \{\vec{\eta_1}, \ldots,\vec{\eta_m} \}$~--- независимые, $n \sim \mathcal{N}(0,1)$
+Случайный вектор $\vec{\xi}$~--- гауссовский, если он представляется в следующем виде: $\vec{\xi} = A\vec{\eta} + \vec{B}$, где $\vec{B} \in \mathbb{R}^n,A \in \mat (n\times m)$ и $\vec{\eta} = \{\vec{\eta_1}, \ldots,\vec{\eta_m} \}$~--- независимые, $n \sim \mathcal{N}(0,1)$
 	\end{definition}
 	\begin{definition}
 Случайный вектор $\vec{\xi}$~--- гауссовский, если $\forall \lambda \in \mathbb{R}^n$ случайный вектор $(\vec{\lambda}, \vec{\xi})$ имеет нормальное распределение
@@ -58,9 +59,9 @@ bottom	= 2cm
 	\end{tasks}
 	\section{Отзыв}
 	\begin{itemize}
-		\item \textbf{Наверное, один из самых полезных курсов на физтехе, который с большой вероятностью пригодится в жизни}
-		\item \textbf{Хотелось бы побольше примеров. Теория всегда хорошо, но практика приоритетнее}
-		\item \textbf{Самый лучший лектор - это твой сверстник: с ним всегда можно найти общий язык}
+		\item \textbf{Наверное, один из самых полезных курсов на физтехе, который с большой вероятностью пригодится в жизни
+		\item Хотелось бы побольше примеров. Теория всегда хорошо, но практика находится  в большем приоритете.
+		\item Самый лучший лектор --- это твой сверстник: с ним всегда можно найти общий язык}
 	\end{itemize}
 \end{document}
 
