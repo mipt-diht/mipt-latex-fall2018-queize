@@ -1,0 +1,43 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+
+
+\lstset{	
+    language = python,
+	backgroundcolor = \color{white},
+	basicstyle = \scfamily,
+	frame = single,
+	keywordstyle = \color{blue},
+	stringstyle = \color{red},
+	numbers = left,
+	numberstyle = \ttfamily\color{black}
+}
+\pgfplotsset{
+	width = 18cm,
+	height = 10cm,
+	grid = major,
+	legend pos = north west
+}
+\usepackage[
+left 	= 1cm,
+right 	= 1cm,
+top 	= 1cm,
+bottom 	= 2cm
+]
+{geometry}
+\begin{document}
+\lstinputlisting{gen.py} 
+\hspace{1pc}
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[xlabel = {x}, ylabel = {y}, legend entries = {Эксперимент, $y = 3.0612x + 2.6882$}]
+            \addplot [only marks] table{data.dat};
+			\addplot [green, no marks, domain=-10:10] {3.0612*x + 2.6882};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\end{document}
