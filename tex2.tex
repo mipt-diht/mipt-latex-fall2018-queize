@@ -1,0 +1,68 @@
+\documentclass[11pt, a5paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{esvect}
+\DeclareMathOperator{\mat}{Mat}
+\usepackage[russian]{babel}
+\usepackage[
+left	= 1cm,
+right	= 1cm,
+top	= 1cm,
+bottom	= 2cm
+]{geometry}
+\newcounter{abc}
+\setcounter{abc}{2}
+\newtheorem{theorem}{Теорема}[section]
+\theoremstyle{definition}\newtheorem{definition}{Определение}
+\newcounter{Number}[section]
+\newenvironment{tasks}[1]{\stepcounter{Number} \underline{\textbf{Задача №\arabic{Number}. #1 }} \\[8pt]}{\\[8pt]}
+
+
+\begin{document}
+
+\section{Центральная предельная теорема}
+	\begin{theorem}[Линдеберга]
+	 Пусть $\{\xi_k\}_{k \geqslant 1}$~--- независимые случайные величины, $\mathsf{E} \xi_k^2 <+ \infty,~\forall k$, обозначим $m_k=\mathsf{E} \xi_k,~\delta_k^2=\mathsf{D} \xi_k;~S_n=\sum\limits_{i=1}^{n}S_i;~\mathsf{D}_n^2 = \sum\limits_{k=0}^{n}\delta_k^2$ и $F(x)$~--- функция распределения $\xi_k$. Пусть выполнено условие Линдербега, т.е.
+	 $$\forall\xi>0,\frac{1}{\mathsf{D}^2}\sum\limits_{k=1}^{n}~ \int\limits_{\{x:\mid x-m_k\mid >\varepsilon \mathsf{D}_n\}} (x-m_k)^2\,dF(x) \xrightarrow[n \rightarrow \infty]{} 0 $$
+	 Тогда  $$ \frac{S_n-\mathsf{E}S_n}{\sqrt{\mathsf{D}S_n}}\overset{\text{d}}{\longrightarrow} \mathcal{N} (0,1),~n \rightarrow \infty.$$
+	\end{theorem}
+	\section{Гауссовский случайный вектор}
+	\begin{definition}
+Слаучайный вектор $\vv{\xi} \sim \mathcal{N}(m,\sum)$~--- гауссовский, если его характеристическая функция $\varphi_\xi(\vv{t})=e^{i(\vv{m},\vv{t}) -\frac{1}{2}(\sum\vv{t},\vv{t})},~\vv{m} \in \mathcal{R}^n,~\sum$~--- симметрическая, неотрицательно-определенная матрица.
+	\end{definition}
+	\begin{definition}
+Случайный вектор $\vv{\xi}$~--- гауссовский, если он представляется в следующем виде: $\vv{\xi} = A\vv{\eta} + \vv{B}$, где $\vv{B} \in \mathbb{R}^n,A \in \mat (n\times m)$ и $\vv{\eta} = \{\vv{\eta}_1, \ldots,\vv{\eta}_m \}$~--- независимые, $n \sim \mathcal{N}(0,1)$
+	\end{definition}
+	\begin{definition}
+Случайный вектор $\vv{\xi}$~--- гауссовский, если $\forall \lambda \in \mathbb{R}^n$ случайный вектор $(\vv{\lambda}, \vv{\xi})$ имеет нормальное распределение
+	\end{definition}
+	\begin{theorem}[об эквивалентности определений гауссовского вектора]
+		Предыдущие три определния эквиваленты
+	\end{theorem}
+	\section{Задачи по астрономии}
+	\begin{tasks}{Загадочный круг}
+	Установите астрономический азимут восхода звезды $\varepsilon$ CMa    $(6^\text{h}\, 58^\text{m}\, 38^\text{s}, \\ -28\,\degree58\,')$ при наблюдении  из самой северной равноудаленной от Санкт-Петербурга $(59\,\degree57\,'~\text{с.ш.},~ 30\,\degree19\,'$ $\text{в.д.})$ и Красной поляны $(43\,\degree41\,'~\text{с.ш.} $ , $40\,\degree11\,'~\text{в.д.})$ точки земной поверхности. Атмосферой пренебрегите, а Земля --- шар.
+	\end{tasks}
+	\begin{tasks}{К Сатурну!} 
+	Космический корабль запустили с поверхности Земли к Сатурну по наиболее энергетически выгодной траектории. При движении по орбите корабль пролетел мимо астероида-троянца (624) Гектор. \\[8pt]
+	Определите большую полуось и эксцентриситет полученной орбиты, скорость старта с поверхности, а также угол между направлением Солнце и на Сатурн в момент старта корабля. Орбиты планет считать круговыми. Оцените относительную скорость корабля и астероида в момент сближения
+	\end{tasks}
+	\begin{tasks}{H \Roman{abc}}
+	Предположим, что за пределами солнечного круга кривая вращения Галактики плоская, параметр плато $v = 240$~км/с. Пусть известно, что диск нейтрального водорода простирается до галакто-центрического расстояния $R_\text{max}$ = 50 кпк. Мы наблюдаем облако нейтрального водорода на галактической долготе $l$ = 140\,\degree. Оцените минимально возможное значение лучевой скорости этого облака. 
+	\end{tasks}
+	\begin{tasks}{Обратный комптон-эффект}
+	Обратным комптон-эффектом (ОЭК) называют явление рассеяния фотона на ултрарелятивистском свободном электроне, при котором происходит перенос энергии от электрона к фотону. Рассмотрим ОЭК для фотонов реликтового излучения. При какой энергии электронов в направленном пучке рассеяное излучение можно будет зарегистрировать на фотоприёмнике?
+	\end{tasks}
+	\section{Отзыв}
+	\textbf{
+	\begin{itemize} 
+ 		\item Наверное, один из самых полезных курсов на физтехе, который с большой вероятностью пригодится в жизни
+		\item Хотелось бы побольше примеров. Теория всегда хорошо, но практика находится  в большем приоритете.
+		\item Самый лучший лектор --- это твой сверстник: с ним всегда можно найти общий язык
+	\end{itemize}
+	}
+\end{document}
